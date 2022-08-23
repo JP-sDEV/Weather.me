@@ -2,12 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  --primary-bg-col: #F8EFD7;
+  --secondary-col: #d5c9bddc;
+  --primary-border-col: #FAAD8C;
+  --secondary-border-col: #584236;
+  --font-col: #000000;
+  --sel-font-col: #E36273;
+
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: -apple-system, 'Press Start 2P', cursive, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--primary-bg-col);
+  height: 100vh;
+  width: 100%;
+  
 }
 
 a {
@@ -17,4 +31,21 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.autocomplete-container {
+  position: relative;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
 }
