@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { useContext } from 'react'
 import Search from '../public/assets/search.svg'
-// import Logo from '../public/assets/logo.svg'
 import Logo from '../public/icon.ico'
 
 import {AppContext, StoreContext} from '../Context/global'
