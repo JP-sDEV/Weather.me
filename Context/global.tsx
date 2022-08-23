@@ -13,13 +13,13 @@ interface IChartData {
 
 export type StoreContext = {
     forecast: WeatherAPIResponse|null,
-    option: String|null,
-    location: String| "",
+    option: string|null,
+    location: string| "",
     chartData: IChartData,
     locationVisible: Boolean,
-    setOption: Dispatch<SetStateAction<String>>,
+    setOption: Dispatch<SetStateAction<string>>,
     setForecast: Dispatch<SetStateAction<WeatherAPIResponse>>,
-    setLocation: Dispatch<SetStateAction<String>>,
+    setLocation: Dispatch<SetStateAction<string>>,
     setChartData: Dispatch<SetStateAction<any>>,
     setLocationVisible: Dispatch<SetStateAction<Boolean>>,
 }
@@ -34,8 +34,8 @@ const AppProvider: any = ({ children }: any) => {
         precip: [],
         wind: []
       })
-    const [option, setOption] = useState<String | null>("temp")
-    const [location, setLocation] = useState<String | null>(null)
+    const [option, setOption] = useState<string | null>("temp")
+    const [location, setLocation] = useState<string | null>(null)
     const [locationVisible, setLocationVisible] = useState(true)
 
     const store = {
