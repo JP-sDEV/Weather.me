@@ -56,7 +56,7 @@ const WChart = (props: Props) => {
     datasets:[
       {
         label: option![0].toUpperCase() + option!.slice(1).toLowerCase(),
-        data: `chartData.${option}`,
+        data: chartData[option],
         borderColor: selectColor(),
         backgroundColor: selectColor()
       },
