@@ -1,11 +1,11 @@
-import GetWeather, { WeatherAPIReponse } from "./Helpers/GetWeather";
+import GetWeather, { WeatherAPIResponse } from "./Helpers/GetWeather";
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 
 export default async function handler(
     req: NextApiRequest,
-    res:NextApiResponse<WeatherAPIReponse>
+    res:NextApiResponse<any>
     ) {
     
     if (req.method == "POST") {

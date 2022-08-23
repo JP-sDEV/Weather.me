@@ -19,13 +19,13 @@ const SecondaryCard = (props: Props) => {
 
   useEffect(() => {
     
-    GetRecommendations(props.rec, forecast?.forecast, forecast?.current)
+    GetRecommendations(props.rec, forecast.forecast, forecast.current)
       .then(r => setInfo({
         ...info,
-        text: r.text,
-        icon: r.icon,
-        stat: r.stat,
-        title: `${props.rec}?`
+        text: r!.text,
+        icon: r!.icon,
+        stat: r!.stat,
+        title: `${props.rec}`
       }))
 
   }, [forecast, location])

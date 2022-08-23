@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { useState, useEffect, createContext, Dispatch, SetStateAction } from 'react';
 
 import { WeatherAPIResponse } from '../pages/api/Helpers/GetWeather';
@@ -12,8 +14,8 @@ interface IChartData {
   }
 
 export type StoreContext = {
-    forecast: WeatherAPIResponse|null,
-    option: string|null,
+    forecast: WeatherAPIResponse,
+    option: string|'temp',
     location: string| "",
     chartData: IChartData,
     locationVisible: Boolean,

@@ -5,7 +5,7 @@ import LocationResult from './LocationResult'
 type Props = {}
 
 const LocationSearch = (props: Props) => {
-  const [response, setResponse] = useState(undefined)
+  const [response, setResponse] = useState<any>(undefined)
 
   const { forecast, location, locationVisible, setLocation, setLocationVisible } = useContext(AppContext) as StoreContext
 
@@ -19,19 +19,19 @@ const LocationSearch = (props: Props) => {
     }),
   };
 
-  const viewable = {
-    position: "fixed",
-    display: "block",
-    width:"100%",
-    height:"100%",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: "rgba(0,0,0,0.5)",
-    zIndex: 2, 
-    cursor: "pointer" 
-    }
+  // const viewable = {
+  //   position: "fixed",
+  //   display: "block",
+  //   width:"100%",
+  //   height:"100%",
+  //   top: 0,
+  //   left: 0,
+  //   right: 0,
+  //   bottom: 0,
+  //   backgroundColor: "rgba(0,0,0,0.5)",
+  //   zIndex: 2, 
+  //   cursor: "pointer" 
+  //   }
 
     const onClick = (e: any) => {
       e.preventDefault()
@@ -56,7 +56,7 @@ const LocationSearch = (props: Props) => {
     }
  
   return (
-    <div style={viewable}>
+    <div id="search-container">
 
       <div className='flex-col mx-auto my-10 p-2 w-5/6 h-5/6 bg-indigo-500 rounded-md' >
         <div className='flex justify-end'>
@@ -85,7 +85,7 @@ const LocationSearch = (props: Props) => {
           <div className='m-auto w-5/6'>
             {
               (locationVisible && response) ? 
-                response.results.map(c => {
+                response.results.map((c: { formatted: string; city: string; place_id: React.Key | null | undefined }) => {
                   return <LocationResult formattedName={c.formatted} cityName={c.city} key={c.place_id}/>
                 }) :
                 []

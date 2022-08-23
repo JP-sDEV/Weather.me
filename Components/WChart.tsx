@@ -1,4 +1,6 @@
-import React, { useRef, useContext, useEffect } from 'react'
+// @ts-nocheck
+
+import React, { useRef, useContext } from 'react'
 
 import {
   Chart as ChartJS,
@@ -53,8 +55,8 @@ const WChart = (props: Props) => {
     labels,
     datasets:[
       {
-        label: option[0].toUpperCase() + option.slice(1).toLowerCase(),
-        data: chartData[option],
+        label: option![0].toUpperCase() + option!.slice(1).toLowerCase(),
+        data: `chartData.${option}`,
         borderColor: selectColor(),
         backgroundColor: selectColor()
       },
