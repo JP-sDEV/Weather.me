@@ -6,8 +6,8 @@ import { ParseTemps, ParseHours, ParsePrecip, ParseWind } from '../pages/api/Hel
 
 
 type Props = {
-  formattedName: String,
-  cityName: String,
+  formattedName: string,
+  cityName: string,
 }
 
 const LocationResult = (props: Props) => {
