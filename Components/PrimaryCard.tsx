@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Cloudy from '../public/assets/Cloudy.svg'
+import Cloudy from '../public/icons/Cloudy.svg'
 import Image from 'next/image'
 
 import InfoTab from './InfoTab'
