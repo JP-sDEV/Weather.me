@@ -1,7 +1,8 @@
 // @ts-nocheck
 
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useCallback } from 'react'
 import {AppContext, StoreContext} from '../Context/global'
+import debounce from 'lodash.debounce'
 import LocationResult from './LocationResult'
 
 type Props = {}
@@ -41,22 +42,21 @@ const LocationSearch = (props: Props) => {
     }
 
     const onChange = (e: any) => {
-
       setLocation(e.target.value)
       
       if (e.target.value.length >= 3) {
-        setTimeout(() => {
-        
           fetch(`api/LocationSearch`, requestOptions)
             .then(res => res.json())
             .then(result => setResponse(result.res))
             .catch(error => console.log('error', error));
-  
-        }, 500)
-
       }
     }
  
+    const debounceSearch = useCallback(
+      debounce(onChange, 300)
+      ,[location]
+    )
+
   return (
     
     <div style={viewable}>
@@ -78,8 +78,7 @@ const LocationSearch = (props: Props) => {
                  type='text'
                  name='location'
                  placeholder="Toronto, ON"
-                 onChange={e => onChange(e)}
-                 value={ location }
+                 onChange={ debounceSearch }
                  />
         </div>
 
